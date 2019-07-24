@@ -44,11 +44,11 @@ var config = {
 			config: {
 				calendars: [
 					{
-						symbol: "calendar-check",
+						symbol: "calendar-check-o ",
 						url: "webcal://www.calendarlabs.com/ical-calendar/ics/76/US_Holidays.ics"
 					},
 					{
-						symbol: "Calendar",
+						symbol: "MyCalendar",
 						url: "https://calendar.google.com/calendar/ical/bernicelau430%40gmail.com/public/basic.ics"
 					}
 				]
@@ -85,6 +85,22 @@ var config = {
 				location: "San Francisco",
 				locationID: "5391997",  //ID from https://openweathermap.org/city
 				appid: "e176a165b50bcb4bd7e7c6ab664be82e"
+			}
+		},
+		{
+			module: 'MMM-iFrame-Ping',
+			position: 'middle_center',	// This can be any of the regions.
+			config: {
+				// See 'Configuration options' for more information.
+				url: "https://www.youtube.com/embed/tPO9jxUKIsc&autoplay=1&modestbranding=1&iv_load_policy=3", //url to display
+				height:"100%", 
+				width:"80%",
+				autoRefresh: true, //set to false for video
+				updateInterval: 1, //in min. Only if autoRefresh: true
+				displayLastUpdate: true,
+				width: "100%", // Optional. Default: 100%
+				height: "400px", //Optional. Default: 100px
+				scrolling: "no" 
 			}
 		},
 		{
