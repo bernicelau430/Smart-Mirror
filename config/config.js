@@ -30,14 +30,10 @@ var config = {
 			module: "alert",
 		},
 		{
-			module: "updatenotification",
-			position: "top_bar"
-		},
-		{
 			module: "clock",
 			position: "top_left"
 		},
-		{
+		/*{
 			module: "calendar",
 			header: "US Holidays",
 			position: "top_left",
@@ -47,10 +43,6 @@ var config = {
 						symbol: "calendar-check-o ",
 						url: "webcal://www.calendarlabs.com/ical-calendar/ics/76/US_Holidays.ics"
 					},
-					{
-						symbol: "MyCalendar",
-						url: "https://calendar.google.com/calendar/ical/bernicelau430%40gmail.com/public/basic.ics"
-					}
 				]
 			}
 		},
@@ -88,22 +80,6 @@ var config = {
 			}
 		},
 		{
-			module: 'MMM-iFrame-Ping',
-			position: 'middle_center',	// This can be any of the regions.
-			config: {
-				// See 'Configuration options' for more information.
-				url: "https://www.youtube.com/embed/tPO9jxUKIsc&autoplay=1&modestbranding=1&iv_load_policy=3", //url to display
-				height:"100%", 
-				width:"80%",
-				autoRefresh: true, //set to false for video
-				updateInterval: 1, //in min. Only if autoRefresh: true
-				displayLastUpdate: true,
-				width: "100%", // Optional. Default: 100%
-				height: "400px", //Optional. Default: 100px
-				scrolling: "no" 
-			}
-		},
-		{
 			module: "newsfeed",
 			position: "bottom_bar",
 			config: {
@@ -117,6 +93,77 @@ var config = {
 				showPublishDate: true
 			}
 		},
+		{
+  			module: 'MMM-MyCommute',
+  			position: 'top_right',
+  			config: {
+			    apikey: 'AIzaSyDagfSYWuzOWOL3Xh6xJf2sr7FYal37tzs',
+			    origin: '1918 31st Ave, San Francisco, CA 94116',
+			    startTime: '00:00',
+			    endTime: '23:59',
+			    destinations: [
+      						{
+        						destination: 'Lowell High School, 1101 Eucalyptus Dr, San Francisco, CA 94132',
+ 	        					label: 'Lowell High School',
+        						mode: 'driving',
+       	 						color: '#8cf0ff',
+      						},
+     						{
+				      		  	destination: 'A. P. Giannini Middle School, 3151 Ortega St, San Francisco, CA 94122',
+				   		  	label: 'A. P. Giannini Middle School',
+				      		  	mode: 'driving',
+							color: '#ff8cdb',
+      						},
+    						{
+				        		destination: 'A. P. Giannini Middle School, 3151 Ortega St, San Francisco, CA 94122',
+				        		label: 'A. P. Giannini Middle School',
+				        		mode: 'walking',
+							color: '#ffee8c',
+				      		},
+    					  ]
+  				}
+		},
+		{
+    			module: 'MMM-AlexaOnOff',
+    			config: {
+        			devices: [{ 
+              			name: "Magic Mirror",
+              			on: { 
+                			notification: "ONSCREENMENU_PROCESS_ACTION",
+                			payload: { actionName:'monitorOn' }
+              	    			},
+              			off: { 
+                			notification: "ONSCREENMENU_PROCESS_ACTION",
+                			payload: { actionName:'monitorOff' }
+              				},
+        				  }]
+    				}
+ 		},
+		{
+            		module: 'MMM-OnScreenMenu',
+            		position: 'bottom_left',
+            		config: {
+                		touchMode: true,
+                		enableKeyboard: true,
+                		menuItems: {
+		    			monitorOff: { title: "Turn Off Monitor", icon: "television", source: "SERVER" },
+		    			refresh: { title: "Refresh", icon: "recycle", source: "LOCAL" },
+		    			restart: { title: "Restart MagicMirror", icon: "refresh", source: "ALL" },
+		    			reboot: { title: "Reboot", icon: "spinner" },
+		    			shutdown: { title: "Shutdown", icon: "power-off"  }
+   					    },
+
+   				}
+		},
+		{
+			module: 'MMM-ImageSlideshow',
+			position: 'top_left',
+			config: {
+				imagePaths: ['modules/MMM-ImageSlideshow/exampleImages'],
+				randomizeImageOrder: true,
+				}
+		},*/	
+
 	]
 
 };
